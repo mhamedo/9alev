@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>iroxstore</title>
+  <style>
+    body {
+      background-color: blue;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      padding: 50px 0;
+    }
+    
+    h2 {
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    #changingNumbers {
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is an example page test</h1>
+  <h2>Thanks for signup</h2>
+  <div id="changingNumbers"></div>
+
+  <script>
+    function generateRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function updateChangingNumbers() {
+      var numbersElement = document.getElementById("changingNumbers");
+      var numbers = [];
+      
+      for (var i = 0; i < 5; i++) {
+        var randomNumber = generateRandomNumber(1, 100);
+        numbers.push(randomNumber);
+      }
+      
+      numbersElement.textContent = numbers.join(" - ");
+    }
+    
+    updateChangingNumbers();
+  </script>
+</body>
+</html>
